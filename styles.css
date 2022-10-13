@@ -1,0 +1,198 @@
+body {
+  font-family: 'Raleway', sans-serif;
+  background-color: rgba(0, 0, 0, 0.406);
+}
+.search-title {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.card {
+  display: flex;
+  background-color: rgba(245, 245, 245, 0.89);
+  width: 80%;
+  margin :20px auto;
+  border: 2px solid;
+  border-radius: 10px;
+  box-shadow: 3px 3px 14px rgba(0, 0, 0, 0.547);
+  opacity: 1;
+  transition: 1s;
+}
+.card:hover{
+  box-shadow: 3px 3px 14px rgba(0, 0, 0, 0);
+
+}
+.img-card {
+  height: 150px;
+}
+
+.img-card img {
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  margin-left: auto;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #002bff,
+    #7a00ff,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+.button-85:hover {
+  transform: scale(1.1);
+}
+
+#search-field  input {
+  width: 400px;
+  margin-left: 20px;
+  height: 40px;
+  padding-left: 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  border: none;
+}
+
+#search-field button {
+  width: 200px;
+  margin-left: 20px;
+  height: 40px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  background-color: darkslategrey;
+  color: white;
+  cursor: pointer;
+  border: none;
+}
+
+#search-field button:hover {
+  scale: 1.05;
+}
+
+.hidden {
+ opacity: 0;
+ transition: 0.5s;
+}
+
+#close-button {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  margin: 5px;
+  right: 0;
+  top: 0;
+  padding: 5px;
+  border: 1px solid rgba(0, 0, 0, 0.631);
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#modal-card {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  top: 0%;
+  left: 0%;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.631);
+}
+
+.modal-card {
+  display: flex;
+  position: fixed;
+  border: 1px solid rgba(0, 0, 0, 0.565);
+  border-radius: 10px;
+  z-index: 2; 
+  left: 10%;
+  top: 25%;
+  background-color: rgb(245, 245, 245);
+  width: 80%; 
+  height: 50%; 
+  animation: fade 0.8s forwards;
+}
+@keyframes fade {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.img-modal-card {
+  margin-right: 20px;
+  height: 100%;
+}
+
+.img-modal-card img {
+  height: 100%;
+  border-top-left-radius: 8px;
+  border-bottom-left-radius: 8px;
+}
+
+.content-card {
+  overflow: auto;
+  width: 100%;
+  padding-left: 30px;
+}
